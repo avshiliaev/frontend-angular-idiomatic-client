@@ -7,7 +7,8 @@ import { Training } from "./training"
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  training: Training[] = [
+  title = "abc"; 
+  trainings: Training[] = [
     {
       id:1,
       name: "name_1",

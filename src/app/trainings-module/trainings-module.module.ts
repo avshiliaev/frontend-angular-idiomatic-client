@@ -6,8 +6,9 @@ import { TrainingsComponentComponent } from './trainings-component/trainings-com
 
 @NgModule({
   declarations: [TrainingsComponentComponent],
+  exports: [TrainingsComponentComponent],
   imports: [
-    CommonModule
+    CommonModule 
   ]
 })
 export class TrainingsModuleModule { }
