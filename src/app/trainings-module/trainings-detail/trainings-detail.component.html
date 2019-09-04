@@ -1,9 +1,17 @@
-<div class="trainingsBox">
-    <div class="listItem">
-        {{selectedTraining | json}}
-    </div> 
-    <div>
-        <img [src]="selectedTraining.imgUrl" height="142" width="142"> 
+   
+<div class="card">
+    <div class="card-header">
+            {{ selectedTraining.name }}
     </div>
-    <input type="text" [(ngModel)]="selectedTraining.name"/> 
-</div>       
+    <div class="card-block">
+        <div class="card-title">
+            Description 
+        </div>
+        <div class="card-text">
+            <img [src]="selectedTraining.imgUrl" height="142" width="142">    
+        </div>
+    </div>
+    <div class="card-footer">
+        <input type="text" [(ngModel)]="selectedTraining.name"/> 
+    </div>
+</div>

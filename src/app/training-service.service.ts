@@ -8,7 +8,7 @@ import { Training } from "./training"
 export class TrainingServiceService {
 
   getAll(): Training[] {
-    return TRAININGS;
+    return TRAININGS; 
   }
 
   constructor() { }

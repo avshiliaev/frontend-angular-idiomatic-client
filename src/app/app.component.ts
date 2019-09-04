@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Training } from "./training"
 import {TrainingServiceService} from "./training-service.service"
 
@@ -7,16 +7,18 @@ import {TrainingServiceService} from "./training-service.service"
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
   title = "abc"; 
   trainings: Training[]
   selectedEvent: Training;
 
 
-  constructor(private train: TrainingServiceService){
-    this.trainings = train.getAll()
-  }
+  constructor(private train: TrainingServiceService){}
 
+  ngOnInit(): void {
+    this.trainings = this.train.getAll();
+  }
 
   eventCatcher($event) { 
     this.selectedEvent = $event; 

@@ -1,14 +1,12 @@
-<div class="trainingsBox">
-    <ul> 
-        <li 
-            *ngFor="let t of trainings" 
-            class="listItem"
-            (click)="eventEmitter($event, t)">
-            <div [class.disc]="t.discontinued" >
-                {{t.name}} 
-            </div>  
-        </li> 
-    </ul>
+<div>
+    <button 
+        *ngFor="let t of trainings"
+        class="btn btn-primary"  
+        (click)="eventEmitter($event, t)">
+        <div [class.disc]="t.discontinued" >
+            {{t.name}} 
+        </div>  
+    </button>  
 </div>
 
  
