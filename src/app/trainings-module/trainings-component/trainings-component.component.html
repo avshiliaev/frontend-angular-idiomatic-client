@@ -1,9 +1,12 @@
 <div class="trainingsBox">
     <ul> 
-        <li class="listItem"
+        <li 
             *ngFor="let t of trainings" 
+            class="listItem"
             (click)="eventEmitter($event, t)">
-            {{t.name}} 
+            <div [class.disc]="t.discontinued" >
+                {{t.name}} 
+            </div>  
         </li> 
     </ul>
 </div>

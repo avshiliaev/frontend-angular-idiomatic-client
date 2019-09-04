@@ -11,6 +11,11 @@
     margin: 10px;
 } 
 
+.disc{
+    font-style: italic;
+    text-decoration: line-through; 
+}
+
 .listItem:hover { 
     background-color: rgba(25, 0, 83, 0.363);
   }  

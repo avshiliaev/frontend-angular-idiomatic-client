@@ -1,5 +1,7 @@
 export interface Training {
     id:number,
     name:string,
-    description:string
+    description:string,
+    imgUrl: string,
+    discontinued: boolean
 }
