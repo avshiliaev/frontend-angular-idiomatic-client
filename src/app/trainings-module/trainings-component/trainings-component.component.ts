@@ -15,4 +15,8 @@ export class TrainingsComponentComponent implements OnInit {
   ngOnInit() {
   }
 
+  clickFunc(event: MouseEvent, t: Training){
+    console.log(t.name); 
+  }
+
 }

@@ -11,17 +11,17 @@ export class AppComponent {
   trainings: Training[] = [
     {
       id:1,
-      name: "name_1",
+      name: "Angular",
       description: "description_1"
     },
     {
       id:2,
-      name: "name_2",
+      name: "Docker",
       description: "description_2"
     },
     {
       id:3,
-      name: "name_3",
+      name: "Kubernetes",
       description: "description_3"
     }
   ]; 

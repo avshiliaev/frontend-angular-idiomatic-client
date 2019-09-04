@@ -1,6 +1,8 @@
-<div>
+<div class="trainingsBox">
     <ul> 
-        <li *ngFor="let t of trainings">
+        <li class="listItem"
+            *ngFor="let t of trainings" 
+            (click)="clickFunc($event, t)">
             {{t.name}}
         </li> 
     </ul>
