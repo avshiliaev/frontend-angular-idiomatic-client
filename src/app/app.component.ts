@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Training } from "./training"
+import {TrainingServiceService} from "./training-service.service"
 
 @Component({
   selector: 'app-root',
@@ -8,31 +9,14 @@ import { Training } from "./training"
 })
 export class AppComponent {
   title = "abc"; 
-  trainings: Training[] = [
-    {
-      id:1,
-      name: "Angular",
-      description: "description_1",
-      imgUrl: "assets/angular2-shield.svg",
-      discontinued: false
-    },
-    {
-      id:2,
-      name: "Docker",
-      description: "description_2",
-      imgUrl: "assets/docker.svg",
-      discontinued: true
-    },
-    {
-      id:3,
-      name: "Kubernetes",
-      description: "description_3",
-      imgUrl: "assets/Kubernetes.svg",
-      discontinued: false
-    }
-  ]; 
-
+  trainings: Training[]
   selectedEvent: Training;
+
+
+  constructor(private train: TrainingServiceService){
+    this.trainings = train.getAll()
+  }
+
 
   eventCatcher($event) { 
     this.selectedEvent = $event; 

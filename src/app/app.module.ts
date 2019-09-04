@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {TrainingsModuleModule} from "src/app/trainings-module/trainings-module.module";
-import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -11,8 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
   ],
   imports: [
     BrowserModule,
-    TrainingsModuleModule ,
-    MatButtonModule
+    TrainingsModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
