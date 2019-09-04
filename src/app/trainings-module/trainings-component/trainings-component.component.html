@@ -2,8 +2,8 @@
     <ul> 
         <li class="listItem"
             *ngFor="let t of trainings" 
-            (click)="clickFunc($event, t)">
-            {{t.name}}
+            (click)="eventEmitter($event, t)">
+            {{t.name}} 
         </li> 
     </ul>
 </div>

@@ -25,4 +25,8 @@ export class AppComponent {
       description: "description_3"
     }
   ]; 
+
+  eventCatcher($event) {
+    console.log($event); 
+  }
 }

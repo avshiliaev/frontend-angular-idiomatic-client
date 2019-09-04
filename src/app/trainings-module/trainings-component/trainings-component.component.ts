@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Training } from "src/app/training"
 
 @Component({
@@ -9,14 +9,17 @@ import { Training } from "src/app/training"
 export class TrainingsComponentComponent implements OnInit {
 
   @Input() trainings: Training[];
+  @Output() like = new EventEmitter<Training>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  clickFunc(event: MouseEvent, t: Training){
+  eventEmitter(click_event: MouseEvent, t: Training){
     console.log(t.name); 
+    const event =  t;
+    this.like.emit(event);
   }
 
 }
