@@ -5,9 +5,10 @@ import { TrainingsDetailComponent } from './trainings-detail/trainings-detail.co
 import { FormsModule } from '@angular/forms';
 import { TakePlaceSoonPipe } from './take-place-soon.pipe';
 import { TrainingListRoutComponentComponent } from './training-list-rout-component/training-list-rout-component.component';
+import { TrainingDetailsRouteComponentComponent } from './training-details-route-component/training-details-route-component.component';
 
 @NgModule({
-  declarations: [TrainingsComponentComponent, TrainingsDetailComponent, TakePlaceSoonPipe, TrainingListRoutComponentComponent],
+  declarations: [TrainingsComponentComponent, TrainingsDetailComponent, TakePlaceSoonPipe, TrainingListRoutComponentComponent, TrainingDetailsRouteComponentComponent],
   exports: [TrainingsComponentComponent, TrainingsDetailComponent, TakePlaceSoonPipe, TrainingListRoutComponentComponent],
   imports: [ 
     CommonModule, 
