@@ -3,5 +3,6 @@ export interface Training {
     name:string,
     description:string,
     imgUrl: string,
-    discontinued: boolean
+    discontinued: boolean,
+    nextRun: string
 }

@@ -3,3 +3,5 @@
     font-style: italic;
     text-decoration: line-through; 
 }  
+
+:focus {outline:0 !important;}  

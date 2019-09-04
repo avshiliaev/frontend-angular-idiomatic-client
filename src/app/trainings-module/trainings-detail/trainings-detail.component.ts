@@ -8,7 +8,7 @@ import { Training } from "src/app/training"
 })
 export class TrainingsDetailComponent implements OnInit {
 
-  @Input() selectedTraining: Training[];
+  @Input() selectedTraining: Training;
   //@Output() like = new EventEmitter<Training>();
 
   constructor() { }

@@ -3,10 +3,10 @@
     <div class="card-header">
             {{ selectedTraining.name }}
     </div>
-    <div class="card-block">
+    <div class="card-block"> 
         <div class="card-title">
-            Description 
-        </div>
+            Next run: {{ selectedTraining.nextRun | date: 'd/M/y' }} 
+        </div>  
         <div class="card-text">
             <img [src]="selectedTraining.imgUrl" height="142" width="142">    
         </div>
