@@ -2,4 +2,7 @@
     <div class="listItem">
         {{selectedTraining | json}}
     </div> 
-</div> 
+    <div *ngIf="selectedTraining.name === 'Angular'">
+        <img src="assets/angular2-shield.svg">
+    </div>
+</div>   

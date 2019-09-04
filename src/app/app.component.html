@@ -1,8 +1,17 @@
+<div class="headerBox">
+    Select a training
+</div>
+
 <app-trainings-component 
   (like)="eventCatcher($event)"
   [trainings]="trainings">
 </app-trainings-component> 
 
-<app-trainings-detail 
+<div class="headerBox"> 
+    Selected training  
+</div>
+
+<app-trainings-detail
+  *ngIf="selectedEvent" 
   [selectedTraining] = "selectedEvent">
 </app-trainings-detail>
