@@ -3,7 +3,6 @@
   [trainings]="trainings">
 </app-trainings-component> 
 
-
-<div>
-  {{selectedEvent | json}}
-</div>
+<app-trainings-detail 
+  [selectedTraining] = "selectedEvent">
+</app-trainings-detail>

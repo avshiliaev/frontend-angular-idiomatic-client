@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { Training } from "src/app/training"
 
 @Component({
   selector: 'app-trainings-detail',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trainings-detail.component.css']
 })
 export class TrainingsDetailComponent implements OnInit {
+
+  @Input() selectedTraining: Training[];
+  //@Output() like = new EventEmitter<Training>();
 
   constructor() { }
 
