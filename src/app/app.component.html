@@ -1,8 +1,9 @@
-<div>
-  {{title}}
-</div>
-<hr>
 <app-trainings-component 
   (like)="eventCatcher($event)"
   [trainings]="trainings">
 </app-trainings-component> 
+
+
+<div>
+  {{selectedEvent | json}}
+</div>

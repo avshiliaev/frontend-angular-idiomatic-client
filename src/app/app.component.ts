@@ -26,7 +26,9 @@ export class AppComponent {
     }
   ]; 
 
-  eventCatcher($event) {
-    console.log($event); 
+  selectedEvent: Training;
+
+  eventCatcher($event) { 
+    this.selectedEvent = $event; 
   }
 }
