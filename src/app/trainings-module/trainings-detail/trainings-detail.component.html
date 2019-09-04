@@ -3,13 +3,13 @@
         {{ selectedTraining.name }}
     </div>
     <div class="card-block">  
-        <div class="card-title" [class.take-place-soon]="selectedTraining.nextRun | takePlaceSoon">
+        <div class="card-title" [class.take-place-soon]="selectedTraining.nextRun | takePlaceSoon ">
             Next run: {{ selectedTraining.nextRun | date: 'd/M/y' }} 
         </div>   
         <div class="card-text">
             <img [src]="selectedTraining.imgUrl" height="142" width="142">    
         </div>
-    </div>
+    </div>  
     <div class="card-footer">
         <input type="text" [(ngModel)]="selectedTraining.name"/> 
     </div>

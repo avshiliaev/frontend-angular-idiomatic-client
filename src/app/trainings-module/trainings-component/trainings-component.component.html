@@ -1,10 +1,10 @@
 <div>
     <button 
         *ngFor="let t of trainings"
-        class="btn btn-primary"  
+        class="btn btn-primary"   
         (click)="eventEmitter($event, t)">
         <div [class.disc]="t.discontinued" >
-            {{t.name}} 
+            {{t.name}}  
         </div>  
     </button>  
 </div>

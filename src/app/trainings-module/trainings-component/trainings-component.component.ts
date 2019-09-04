@@ -13,7 +13,7 @@ export class TrainingsComponentComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { 
   }
 
   eventEmitter(click_event: MouseEvent, t: Training){

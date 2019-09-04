@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Training } from "./training"
 import {TrainingServiceService} from "./training-service.service"
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import {TrainingServiceService} from "./training-service.service"
 export class AppComponent implements OnInit{
 
   title = "abc"; 
-  trainings: Training[]
+  trainings: Observable<Training[]>
   selectedEvent: Training;
 
 
