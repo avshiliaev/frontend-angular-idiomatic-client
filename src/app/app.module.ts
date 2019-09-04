@@ -6,6 +6,9 @@ import {TrainingsModuleModule} from "src/app/trainings-module/trainings-module.m
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { RouterModule } from '@angular/router';
+import { routes } from 'src/app/app.routes';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     TrainingsModuleModule,
     ClarityModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(routes) 
   ],
   providers: [],
   bootstrap: [AppComponent]

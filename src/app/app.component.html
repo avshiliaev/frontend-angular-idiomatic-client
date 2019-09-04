@@ -6,29 +6,16 @@
                 <span class="title">Trainings</span>
             </a>
         </div> 
-    </header>
+    </header> 
     <div class="content-container">
       <clr-vertical-nav>
-          <a clrVerticalNavLink routerLink="./Link" routerLinkActive="active">Link</a>
+          <a clrVerticalNavLink routerLink="./trainings" routerLinkActive="active">Trainings</a>
           <div class="nav-divider"></div> 
           <a clrVerticalNavLink routerLink="./credit" routerLinkActive="active">Credit</a>
       </clr-vertical-nav>   
       <div class="content-area">
-        <div class="headerBox">
-          Select a training
-        </div>
-        <app-trainings-component 
-          (like)="eventCatcher($event)"
-          [trainings]="$trainings | async">  
-        </app-trainings-component>  
-        <div class="headerBox"> 
-          Selected training  
-        </div>
-        <app-trainings-detail
-          *ngIf="selectedEvent" 
-          [selectedTraining] = "selectedEvent">
-        </app-trainings-detail> 
-      </div>
-  </div>
+        <router-outlet></router-outlet>
+      </div> 
+  </div> 
 </div>
 

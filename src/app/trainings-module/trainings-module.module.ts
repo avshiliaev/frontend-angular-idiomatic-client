@@ -4,12 +4,13 @@ import { TrainingsComponentComponent } from './trainings-component/trainings-com
 import { TrainingsDetailComponent } from './trainings-detail/trainings-detail.component';
 import { FormsModule } from '@angular/forms';
 import { TakePlaceSoonPipe } from './take-place-soon.pipe';
+import { TrainingListRoutComponentComponent } from './training-list-rout-component/training-list-rout-component.component';
 
 @NgModule({
-  declarations: [TrainingsComponentComponent, TrainingsDetailComponent, TakePlaceSoonPipe],
-  exports: [TrainingsComponentComponent, TrainingsDetailComponent],
+  declarations: [TrainingsComponentComponent, TrainingsDetailComponent, TakePlaceSoonPipe, TrainingListRoutComponentComponent],
+  exports: [TrainingsComponentComponent, TrainingsDetailComponent, TakePlaceSoonPipe, TrainingListRoutComponentComponent],
   imports: [ 
-    CommonModule,
+    CommonModule, 
     FormsModule 
   ]
 })
