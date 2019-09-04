@@ -11,14 +11,14 @@ import { Observable } from 'rxjs';
 export class AppComponent implements OnInit{
 
   title = "abc"; 
-  trainings: Observable<Training[]>
+  $trainings: Observable<Training[]>
   selectedEvent: Training;
 
 
   constructor(private train: TrainingServiceService){}
 
   ngOnInit(): void {
-    this.trainings = this.train.getAll();
+    this.$trainings = this.train.getAll();
   }
 
   eventCatcher($event) { 

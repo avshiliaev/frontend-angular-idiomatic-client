@@ -19,7 +19,7 @@
         </div>
         <app-trainings-component 
           (like)="eventCatcher($event)"
-          [trainings]="trainings | async"> 
+          [trainings]="$trainings | async">  
         </app-trainings-component>  
         <div class="headerBox"> 
           Selected training  
