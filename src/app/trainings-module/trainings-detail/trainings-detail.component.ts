@@ -16,22 +16,29 @@ export class TrainingsDetailComponent implements OnInit {
 
   constructor(private discVal: DiscontinuedValidator) { };
 
-  ngOnInit() {
-    this.form = new FormGroup({
-      name: new FormControl(
-        this.selectedTraining.name, 
+  ngOnInit(){
+
+  }
+
+  ngOnChange() {
+    if (this.selectedTraining) {
+      this.form = new FormGroup({
+        name: new FormControl(
+          this.selectedTraining.name, 
+            [
+              Validators.required, 
+              Validators.minLength(3) 
+            ]
+          ),
+        nextRun: new FormControl(
+          this.selectedTraining.nextRun,
           [
             Validators.required, 
-            Validators.minLength(3)
-          ]
-        ),
-      nextRun: new FormControl(
-        this.selectedTraining.nextRun,
-        [
-          Validators.required, 
-        ] 
-        )
-    }, this.discVal.validator("nextRun", "nextRun"));
+          ] 
+          )
+      }, this.discVal.validator("nextRun", "nextRun"));
+    }
+
   };
  
   onSubmit() {

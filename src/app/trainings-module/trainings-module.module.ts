@@ -7,6 +7,7 @@ import { TakePlaceSoonPipe } from './take-place-soon.pipe';
 import { TrainingListRoutComponentComponent } from './training-list-rout-component/training-list-rout-component.component';
 import { TrainingDetailsRouteComponentComponent } from './training-details-route-component/training-details-route-component.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [TrainingsComponentComponent, TrainingsDetailComponent, TakePlaceSoonPipe, TrainingListRoutComponentComponent, TrainingDetailsRouteComponentComponent],
@@ -15,7 +16,8 @@ import { RouterModule } from '@angular/router';
     CommonModule, 
     FormsModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class TrainingsModuleModule { }

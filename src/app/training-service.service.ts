@@ -3,6 +3,7 @@ import { TRAININGS } from './training.mock';
 import { Training } from "./training"
 import { ReplaySubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,15 +11,25 @@ import { map } from 'rxjs/operators';
 export class TrainingServiceService {
 
   private trainingsSubject = new ReplaySubject<Training[]>(1);
+  private cached: boolean = false;
 
-  constructor() { 
-    this.trainingsSubject.next(TRAININGS);
-   };
+  constructor(private httpClient: HttpClient) {};
 
-  getAll(): Observable<Training[]> {
+   getAll(): Observable<Training[]> { 
+    if (!this.cached) {
+      this.load(); 
+      this.cached = true;
+    } 
     return this.trainingsSubject; 
-  };
-
+  }
+ 
+  load() {
+    this.httpClient.get<Training[]>('http://localhost:3000/api/training') 
+      .subscribe(ts => {
+        this.trainingsSubject.next(ts);  
+      }); 
+    }; 
+ 
   getById(id: number): Observable<Training> {
     return this.getAll() 
       .pipe(
