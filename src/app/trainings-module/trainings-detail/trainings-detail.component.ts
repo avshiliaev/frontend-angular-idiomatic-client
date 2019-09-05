@@ -25,8 +25,4 @@ export class TrainingsDetailComponent implements OnInit {
   onSubmit() {
     Object.assign(this.selectedTraining, this.form.value);
   };
-
-
-  
- 
 }
