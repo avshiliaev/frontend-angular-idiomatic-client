@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Training } from "src/app/training";
-import { FormGroup, FormControl } from "@angular/forms"; 
+import { FormGroup, FormControl, Validators } from "@angular/forms"; 
+import { DiscontinuedValidator } from 'src/app/validators/future.validator';
 
 @Component({
   selector: 'app-trainings-detail',
@@ -13,13 +14,24 @@ export class TrainingsDetailComponent implements OnInit {
   //@Output() like = new EventEmitter<Training>();
   public form: FormGroup; 
 
-  constructor() { };
+  constructor(private discVal: DiscontinuedValidator) { };
 
   ngOnInit() {
     this.form = new FormGroup({
-      name: new FormControl(this.selectedTraining.name),
-      nextRun: new FormControl(this.selectedTraining.nextRun)
-    });
+      name: new FormControl(
+        this.selectedTraining.name, 
+          [
+            Validators.required, 
+            Validators.minLength(3)
+          ]
+        ),
+      nextRun: new FormControl(
+        this.selectedTraining.nextRun,
+        [
+          Validators.required, 
+        ] 
+        )
+    }, this.discVal.validator("nextRun", "nextRun"));
   };
  
   onSubmit() {

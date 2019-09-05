@@ -5,3 +5,11 @@
 }  
 
 :focus {outline:0 !important;}  
+
+.has-error{
+    border-color: red;
+}
+
+.warning{
+    border-color: yellow; 
+}

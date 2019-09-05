@@ -13,14 +13,26 @@
     <div class="card-footer">
         <form [formGroup]="form" (ngSubmit)="onSubmit()"> 
             <label>Course Name:
-                <input type="text" formControlName="name">
+                <input 
+                    [class.has-error]="form.controls['name'].dirty && form.controls['name'].invalid"
+                    [class.warning]="form.controls['name'].prestine && form.controls['name'].invalid"
+                    type="text" 
+                    formControlName="name">
             </label>
+            <br> 
+            <br> 
             <label>Date:
-                <input type="date" formControlName="nextRun">
+                <input 
+                    [class.has-error]="form.controls['nextRun'].dirty && form.controls['nextRun'].invalid"
+                    [class.warning]="form.controls['nextRun'].prestine && form.controls['nextRun'].invalid"
+                    type="date" 
+                    formControlName="nextRun">
             </label>
-            <button type="submit">Save</button>
-        </form>
-    </div>
+            <br> 
+            <br> 
+            <button class="btn btn-primary" [disabled]="!form.valid" type="submit">Save</button>
+        </form> 
+    </div> 
 </div>  
-
+ 
 
