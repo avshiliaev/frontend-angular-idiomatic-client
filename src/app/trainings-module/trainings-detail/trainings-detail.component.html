@@ -11,6 +11,16 @@
         </div>
     </div>  
     <div class="card-footer">
-        <input type="text" [(ngModel)]="selectedTraining.name"/> 
+        <form [formGroup]="form" (ngSubmit)="onSubmit($event)"> 
+            <label>Course Name:
+                <input type="text" formControlName="name">
+            </label>
+            <label>Date:
+                <input type="date" formControlName="nextRun">
+            </label>
+            <button type="submit">Save</button>
+        </form>
     </div>
 </div>  
+
+
