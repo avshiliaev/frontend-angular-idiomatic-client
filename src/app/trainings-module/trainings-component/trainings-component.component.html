@@ -1,11 +1,11 @@
 <div>
     <button 
         *ngFor="let t of trainings"
-        class="btn btn-primary"   
-        (click)="eventEmitter($event, t)">
-        <div [class.disc]="t.discontinued" >
+        [routerLink]="['/training', t.id]"
+        class="btn btn-primary">
+        <div [class.disc]="t.discontinued">
             {{t.name}}  
-        </div>  
+        </div> 
     </button>  
 </div>
 

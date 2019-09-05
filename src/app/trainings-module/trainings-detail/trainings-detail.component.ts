@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
-import { Training } from "src/app/training"
+import { Training } from "src/app/training";
 
 @Component({
   selector: 'app-trainings-detail',
@@ -16,4 +16,7 @@ export class TrainingsDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  
+ 
 }

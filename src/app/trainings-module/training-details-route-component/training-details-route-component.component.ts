@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from "@angular/router";
+import { ActivatedRoute, Params, Router } from "@angular/router";
 import { tap, switchMap, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { TrainingServiceService } from 'src/app/training-service.service';
@@ -14,13 +14,20 @@ export class TrainingDetailsRouteComponentComponent implements OnInit {
 
   training$: Observable<Training>; 
 
-  constructor(private route: ActivatedRoute, private trainingService: TrainingServiceService) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private trainingService: TrainingServiceService,
+    private router: Router) { }
 
   ngOnInit() {  
     this.training$ = this.route.params.pipe(
       map(params => parseInt(params['id'], 10)),
       switchMap(id => this.trainingService.getById(id))
     );
+  }
+
+  goBack() {
+    this.router.navigate([".."]); // one level up
   }
 
 

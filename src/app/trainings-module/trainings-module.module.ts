@@ -6,13 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { TakePlaceSoonPipe } from './take-place-soon.pipe';
 import { TrainingListRoutComponentComponent } from './training-list-rout-component/training-list-rout-component.component';
 import { TrainingDetailsRouteComponentComponent } from './training-details-route-component/training-details-route-component.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [TrainingsComponentComponent, TrainingsDetailComponent, TakePlaceSoonPipe, TrainingListRoutComponentComponent, TrainingDetailsRouteComponentComponent],
   exports: [TrainingsComponentComponent, TrainingsDetailComponent, TakePlaceSoonPipe, TrainingListRoutComponentComponent],
   imports: [ 
     CommonModule, 
-    FormsModule 
+    FormsModule,
+    RouterModule 
   ]
 })
 export class TrainingsModuleModule { }
